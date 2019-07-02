@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Mis datos académicos | Horas directas e indirectas por ramo</title>
+  </head>
+  <body class="bg-light">
+  <div class="container pb-5">
+    <div class="row pb-5">
+      <div class="col-sm-10 pt-4 pb-2">
+        <h1>Horas directas e indirectas por ramo</h1>
+      </div>
+      <div class="col-sm-2 text-right pt-5 pb-2 d-none d-sm-block">
+        <a href="info.html" id="especial">Sobre mí</a>
+      </div>
+      <div class="col-sm-12 p-0 mb-3" id="vis">
+       
+      </div>
+      <div class="col-sm-8">
+        <h3 class="border-bottom py-2">Consideraciones para la recopilación de datos</h3>
+        <p>Sumé las horas directas de clases que ocupamos en cada ramo, más las indirectas que ocupo para trabajar en casa en las distintas entregas. A pesar de que boté el ramo de <strong>Seminario de Diseño Gráfico</strong> cuando se abrió el proceso en u-campus, quise representarlo en el gráfico para dejar constancia de este suceso, y de que uso menos horas que otros compañeros. En cuanto a la <strong>Práctica Profesional I,</strong> a pesar de que mi intención era realizarla este semestre, no se pudo en mayor parte por una desinformación general que hubo en todo el curso.</p>
+      </div>
+      <div class="col-sm-4 small">
+        <h5 class="border-bottom pt-3 pb-2">En el gráfico</h5>
+        <p>Las barras del gráfico que se encuentran en rojo, son ramos que exceden la cantidad de horas indirectas que debería dedicar a ellos.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar fixed-bottom navbar-expand-md navbar-light bg-light">
+    <div class="container border-top">
+      <a class="navbar-brand" href="index.html">Mis visualizaciones de datos</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Portada</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="segunda.html">FAU</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="tercera.html">Ramos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cuarta.html">Viajes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quinta.html">Dinero</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="sexta.html">Sueño</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="info.html">Sobre mí</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Estábamos en p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+    <script>
+
+
+
+    function setup() {
+
+  var data = [6, 4, 5, 6, 16, 2.5,0,0];
+  var ramos = ['Publicidad', 'S. Gráfica Computacional','S. Producción Audiovisual','S. Gestión','Taller de Diseño Gráfico','CFG','S. Diseño Gráfico','Practica Profesional']
+  var width = 1120,
+      height = 350,
+      margin = 20,
+      w = width - 2 * margin,
+      h = height - 2 * margin;
+
+  var barWidth =  (h / (data.length)) * 0.8;
+  var barMargin = (h / (data.length)) * 0.2;
+
+
+  createCanvas(width, height).parent("vis");
+  background(52, 58, 64);
+
+  textSize(14);
+
+  push();
+  translate(margin, margin);
+
+  for(var i=0; i<data.length; i++) {
+    push();
+
+      if (data[i]>9){fill(248, 72, 72)}
+      else {fill(0, 191, 107)}
+      
+
+    noStroke();
+    translate(0, i* (barWidth + barMargin));
+    rect(0, 0, data[i]*60, barWidth);
+    fill('#FFF');
+    text(ramos[i]+' - '+data[i]+' horas', 10, barWidth/2 + 5);
+
+
+    pop();
+  }
+
+  pop();
+  }
+
+
+
+
+    </script>
+  </body>
+</html>

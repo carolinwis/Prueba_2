@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Patua+One&display=swap');
+
+body{
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+	color: (52, 58, 64);
+}
+
+h1{
+	font-weight: 400;
+	color:darkblue;
+}
+
+h2,h3,h4,h5,h6{
+	font-family: 'Patua', monospace;
+	font-weight: 700;
+	color:cornflowerblue;
+}
+
+strong{
+    font-weight: 700;
+}
+
+
+.display-1{
+	font-weight: 700;
+	word-break: break-all;
+	color: white;
+}
+
+.display-1:nth-child(1){
+   	background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(https://www.latercera.com/wp-content/uploads/2018/02/CarcelWEB.jpg) no-repeat;
+  	background-size:cover;
+  	background-position: center center;
+  	-webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.display-1:nth-child(2){
+   	background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(http://www.radioantara.cl/wp-content/uploads/2017/05/SALA-B-5-liceo-bicentenario-copiap%C3%B3.jpg) no-repeat;
+  	background-size:cover;
+  	background-position: center center;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.display-1:nth-child(3){
+   	background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(http://static.t13.cl/images/sizes/1200x675/1548956913-auno1036627-1.jpg) no-repeat;
+  	background-size:cover;
+  	background-position: center center;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.display-1:nth-child(4){
+   	background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(https://comofuncionaque.com/wp-content/uploads/2015/01/El-dinero-se-ha-convertido-desde-hace-mucho-tiempo-en-el-cambio-principal.jpg) no-repeat;
+  	background-size:cover;
+  	background-position: center center;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+
+a#especial{
+	font-style: italic;
+	font-weight: 400;
+	color:red;
+	text-transform: lowercase;
+}
+
+a#especial:before{
+	content:"+ ";
+}
+
+button.navbar-toggler{
+	border:none;
+}
