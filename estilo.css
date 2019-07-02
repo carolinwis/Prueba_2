@@ -60,6 +60,14 @@ strong{
    -webkit-text-fill-color: transparent;
 }
 
+.display-1:nth-child(5){
+   	background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(https://www.m360.cl/noticias/site/artic/20190205/imag/foto_0000000820190205170213.jpg) no-repeat;
+  	background-size:cover;
+  	background-position: center center;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
 
 a#especial{
 	font-style: italic;
